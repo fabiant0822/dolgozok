@@ -54,5 +54,21 @@ public class DB {
             System.out.println(ex.getMessage());
         }
     }
+    
+    public void lista() {
+        try {
+            ekpar = kapcs.prepareStatement("SELECT * FROM adatok");
+            eredmeny = ekpar.executeQuery();
+            while (eredmeny.next()) {
+                System.out.printf("%2d %-50s %s %10d\n",
+                                    eredmeny.getInt("id"),
+                                    eredmeny.getString("nev"),
+                                    eredmeny.getDate("szulido"),
+                                    eredmeny.getInt("fizetes"));
+        }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());;
+        }  
+    } 
 }
 
