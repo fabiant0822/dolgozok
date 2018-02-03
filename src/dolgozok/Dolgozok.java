@@ -55,6 +55,13 @@ public class Dolgozok {
                     ab.emel(sz);
                     break;
                     
+                case '6':
+                    System.out.print("Törölni szeretnél minden rekordot?(i/n):");
+                    char igen = bill.nextLine().charAt(0);
+                    if (igen == 'i')
+                        ab.torol();
+                    break;
+                    
                 default:
                     tovabb = false;
             }

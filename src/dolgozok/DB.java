@@ -131,5 +131,16 @@ public class DB {
             System.out.println(ex.getMessage());
         }
     }
+    
+    public void torol() {
+        String s = "DELETE FROM adatok;";
+        try {
+            ekpar = kapcs.prepareStatement(s);
+            int sorok = ekpar.executeUpdate();
+            System.out.println(sorok + " sor törölve.");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
 }
 
