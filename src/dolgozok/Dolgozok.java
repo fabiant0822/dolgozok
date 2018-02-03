@@ -42,6 +42,12 @@ public class Dolgozok {
                     ab.beolvas(fnev);
                     break;
                     
+                case '4':
+                    System.out.print("Fájlnév: ");
+                    fnev = bill.nextLine();
+                    ab.kiir(fnev);
+                    break;
+                    
                 default:
                     tovabb = false;
             }
