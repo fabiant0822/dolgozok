@@ -67,8 +67,25 @@ public class DB {
                                     eredmeny.getInt("fizetes"));
         }
         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());;
+            System.out.println(ex.getMessage());
         }  
-    } 
+    }
+    
+    public void uj (String nev, String szulido, int fizetes) {
+        String s = "INSERT INTO adatok (nev, szulido, fizetes) "
+                    + "VALUES (?, ?, ?);";
+        
+        try {
+            ekpar = kapcs.prepareStatement(s);
+            ekpar.setString(1, nev);
+            ekpar.setString(2, szulido);
+            ekpar.setInt(3, fizetes);
+            ekpar.executeUpdate();
+            System.out.println(nev + " hozzáadva.");
+            
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
 }
 

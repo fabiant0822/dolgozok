@@ -8,9 +8,6 @@ import java.util.Scanner;
  */
 public class Dolgozok {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         DB ab = new DB();
         Scanner bill = new Scanner(System.in,"cp1250");
@@ -28,10 +25,20 @@ public class Dolgozok {
                     ab.lista();
                     break;
                     
+                case '2':
+                    System.out.print("Név: ");
+                    nev = bill.nextLine();
+                    System.out.print("Születési idő: ");
+                    szulido = bill.nextLine();
+                    System.out.print("Fizetes: ");
+                    fizetes = bill.nextInt();
+                    bill.nextLine();
+                    ab.uj(nev, szulido, fizetes);
+                    break;
+                    
                 default:
                     tovabb = false;
             }
         }
-    }
-    
+    }  
 }
